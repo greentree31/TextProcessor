@@ -12,7 +12,8 @@ butInstall.addEventListener("click", async () => {
   }
   promptEvent.prompt();
   window.choiceResult = await promptEvent.userChoice;
+  butInstall.setAttribute("hidden", true);
 });
 window.addEventListener("appinstalled", (event) => {
-    window.deferredPrompt = null;
+        window.deferredPrompt = null;
 });

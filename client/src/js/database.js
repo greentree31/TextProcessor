@@ -24,6 +24,8 @@ export const putDb = async (id, content) => {
 
 export const getDb = async () => {
   console.log("GET from the database");
+  const indexedDb = await openDB("jate", 1);
+  const tx = indexedDb.transaction("jate", "readonly");
   const store = tx.objectStore("jate");
   const request = store.get(1);
   const result = await request;
